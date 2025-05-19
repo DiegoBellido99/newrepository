@@ -4,3 +4,10 @@
 *:after {
   box-sizing: border-box;
 }
+
+body {
+    background-image: url("/images/site/small.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
