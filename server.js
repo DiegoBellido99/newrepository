@@ -2,6 +2,7 @@
  * This server.js file is the primary file of the 
  * application. It is used to control the project.
  *******************************************/
+
 /* ***********************
  * Require Statements
  *************************/
@@ -12,8 +13,12 @@ const app = express()
 const static = require("./routes/static")
 
 
+const path = require("path");
+app.use(express.static(path.join(__dirname, "public")));
+
+
 /* ***********************
- * View Engine and Templates 
+ * View Engine and Templates
  *************************/
 app.set("view engine", "ejs")
 app.use(expressLayouts)
@@ -22,11 +27,14 @@ app.set("layout", "./layouts/layout") // not at views root
 /* ***********************
  * Routes
  *************************/
-app.use(express.static("public"));
-//Index route 
 
-app.get("/", function(rep , res){
-  res.render("index",{title:"Home"})
+
+// Static Routes// filepath: app.js (or your main server file)
+app.use(static);
+
+// Index route
+app.get("/", function (req, res) {
+  res.render("index", { title: "Home" })
 })
 
 /* ***********************
