@@ -6,7 +6,7 @@ CREATE TYPE public.account_type AS ENUM
     ('Client', 'Employee', 'Admin');
 
 ALTER TYPE public.account_type
-    OWNER TO cse340db;
+    OWNER TO cse340mo;
 
 --Table structure for table "clasification"
 
@@ -56,12 +56,8 @@ CREATE TABLE IF NOT EXISTS public.account
 
 --Data for table classification 
 
-INSERT INTO public .classification(lassification_id)
-VALUES ("Custom"),
-       ("Sport"),
-	   ("SUV"),
-	   ("Truck"),
-	   ("Sedan");
+INSERT INTO public.classification (classification_name)
+VALUES ('Custom'), ('Sport'), ('SUV'), ('Truck'), ('Sedan');
 
 -- Data for table `inventory`
 
